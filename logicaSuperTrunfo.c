@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>  
+#include <time.h>  
 
 int main() {
 
@@ -8,9 +10,9 @@ int main() {
     char estado1;
     int populacao1, pontos_turiticos1;
     float area1, pib1;
-    //Aventureiro: cálculo de densidade e PIB per carpita
+    //Aventureiro 1: cálculo de densidade e PIB per carpita
     float pib_percapita1, densidade1;
-    //Mestre: super poder (soma dos atributos numéricos)
+    //Mestre 1: super poder (soma dos atributos numéricos)
     int resultado1 = populacao1 + area1 + pib1 + pontos_turiticos1 + pib_percapita1;
 
     //Atribuição de operadores matemáticos
@@ -23,9 +25,9 @@ int main() {
     char estado2;
     int populacao2, pontos_turiticos2;
     float area2, pib2;
-    //Aventureiro: cálculo de densidade e PIB per carpita
+    //Aventureiro 1: cálculo de densidade e PIB per carpita
     float pib_percapita2, densidade2;
-    //Mestre: super poder (soma dos atributos numéricos)
+    //Mestre 1: super poder (soma dos atributos numéricos)
     int resultado2 = populacao2 + area2 + pib2 + pontos_turiticos2 + pib_percapita2;
 
     //Atribuição de operadores matemáticos
@@ -62,9 +64,9 @@ int main() {
     printf("CARTA 1\n");
     printf("Estado: %c\n, estado1");
     printf("Código: %c\n", codigo1);
-    printf("Cidade: %s\n", cidade1);
-    printf("População: %f\n", populacao1);
-    printf("Área: %f\n", area1);
+    printf("Cidade: %s\n", cidade1); 
+    printf("População: %.9f\n", populacao1);
+    printf("Área: %.6f\n", area1);
     printf("PIB (Produto Interno Bruto): %f bilhões de reais\n", pib1);
     printf("Quantidade de Pontos Turísticos: %f\n", pontos_turiticos1);
     printf("Densidade Populacional: %f\n", densidade1);
@@ -100,37 +102,35 @@ int main() {
     printf("Estado: %c\n, estado2");
     printf("Código: %c\n", codigo2);
     printf("Cidade: %s\n", cidade2);
-    printf("População: %f\n", populacao2);
-    printf("Área: %f\n", area2);
-    printf("PIB (Produto Interno Bruto): %f bilhões de reais\n", pib2);
+    printf("População: %.9f\n", populacao2);
+    printf("Área: %.6f\n", area2);
+    printf("PIB (Produto Interno Bruto): %.2f bilhões de reais\n", pib2);
     printf("Quantidade de Pontos Turísticos: %f\n", pontos_turiticos2);
-    printf("Densidade Populacional: %f\n", densidade2);
-    printf("PIB per capita: %f\n", pib_percapita2);
+    printf("Densidade Populacional: %.3f\n", densidade2);
+    printf("PIB per capita: %.2f\n", pib_percapita2);
 
 
     //COMPARAÇÕES DAS CARTAS
     printf("Comparação de cartas:\n");
-    printf("Carta 1: %s: %f\n", cidade1, populacao1);
-    printf("Carta 2: %s: %f\n", cidade2, populacao2);
+    printf("Carta 1: %s: %.6f\n", cidade1, populacao1);
+    printf("Carta 2: %s: %.6f\n", cidade2, populacao2);
     
     //POPULAÇAO
-    if(populacao1 > populacao2)
-    {
+    if(populacao1 > populacao2){
         printf("População: carta 1 venceu (1)\n"); 
+    } else if(populacao1 < populacao2){
+         printf("População: carta 2 venceu (0)\n");
+        } else {
+        printf("Houve um empate!\n");
     }
-        else
-        {
-            printf("População: carta 2 venceu (0)\n");
-        }
 
     //DENSIDADE
-    if(densidade1 > densidade2)
-    {
+    if(densidade1 < densidade2){
         printf("Densidade: carta 1 venceu (1)\n"); 
-    }
-        else
-        {
+    } else if(densidade1 > densidade2){
             printf("Densidade: carta 2 venceu (0)\n");
+        } else{
+            printf("Houve um empate!");
         }
 
     return 0;
