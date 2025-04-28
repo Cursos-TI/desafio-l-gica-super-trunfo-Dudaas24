@@ -118,6 +118,9 @@ int main() {
     //COMPARAÇÕES DAS CARTAS
     printf("\n***Comparações***\n");
     
+    printf("Carta 1 - %s: %d\n", cidade1, populacao1);
+    printf("Carta 2 - %s: %d\n", cidade2, populacao2);
+    
     //POPULAÇAO
     if(populacao1 > populacao2){
         printf("População: carta 1 venceu (1)\n"); 
